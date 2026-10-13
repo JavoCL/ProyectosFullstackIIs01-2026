@@ -1,4 +1,4 @@
-import type { ReactNode, useState } from "react";
+import type { ReactNode } from "react";
 
 type Props = {
   // JSX hijo que ira dentro de las etiquetas <...> y <.../>

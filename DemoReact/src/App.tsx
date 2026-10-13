@@ -3,6 +3,7 @@ import Titulo from "./Titulo";
 import Card from "./components/Card";
 import List from "./components/List";
 import Boton from "./components/Boton";
+import MenuDesplegable from "./components/MenuDesplegable";
 
 function App() {
   /*
@@ -35,6 +36,9 @@ function App() {
   const eliminarTrooper = () => setDatos(datos.slice(0, -1));
   const numTroopers = datos.filter((item) => item.startsWith("Trooper")).length;
 
+  // Lista de opciones de menu desplegable
+  const listaOpciones = ["simple", "doble", "triple"];
+
   return (
     <Fragment>
       {/*
@@ -42,11 +46,31 @@ function App() {
       <Card title="Producto 2" text="Descripcion producto 2" />
       <Card title="CEO empresa" />*/}
 
-      <Boton alClikear={agregarTrooper}>+ Trooper</Boton>
+      {/*Clase 3 --------------------------------*/}
+
+      {/* <Boton alClikear={agregarTrooper}>+ Trooper</Boton>
       <Boton alClikear={eliminarTrooper}>- Trooper</Boton>
       <br></br>
       <br></br>
-      <List data={datos} onSelect={manipuladorSeleccion}></List>
+      <List data={datos} onSelect={manipuladorSeleccion}></List> */}
+
+      {/* ---------------------------------------*/}
+
+      <MenuDesplegable
+        titulo="Hamburguesa simple o doble"
+        opciones={listaOpciones}
+        // Agregamos una Fx arrow que solo imprime en consola
+        alSeleccionar={(opcion) => {
+          console.log("La opcion elegida es: " + opcion);
+        }}
+      ></MenuDesplegable>
+
+      <br />
+      <MenuDesplegable
+        titulo="Ciudad"
+        opciones={["Concepcion", "Hualpen", "Talcahuano"]}
+        alSeleccionar={(op) => {}}
+      ></MenuDesplegable>
 
       {/*<List data={["Vader", "Emperor"]} />*/}
 
